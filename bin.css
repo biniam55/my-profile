@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+
+}
+body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    background: #333;
+}
+.card{
+    position: relative;
+    width: 350px;
+    height: 190px;
+    background-color: #333;
+    transition: 0.5s;
+}
+.card:hover{
+    height: 450px;
+}
+.card .lines{
+    position: absolute;
+    inset: 0;
+    background: #000;
+    overflow: hidden;
+}
+.card .lines::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent,#ff3c7b,#45f3ff ,#ff3c7b,transparent);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{transform: translate(-50%,-50%) rotate(0deg);}
+    100%{transform: translate(-50%,-50%) rotate(360deg);}
+}
+.card .lines::after{
+    position: absolute;
+    content: '';
+    inset: 3px;
+    background: #292929;
+}
+.card .box{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+}
+.card:hover .box {
+    width: 250px;
+    height: 250px;
+}
+.card .box::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 150px;
+    background: linear-gradient(transparent, #3cd8ff,#ff3c7b ,#3cf2ff,transparent);
+    animation: animate2 4s linear infinite;
+}
+@keyframes animate2{
+    0%{transform: translate(-50%,-50%) rotate(360deg);}
+    100%{transform: translate(-50%,-50%) rotate(0deg);}
+}
+.card .box::after{
+    position: absolute;
+    content: '';
+    inset: 3px;
+    background: #292929;
+}
+.card .box img{
+    top: 10px;
+    left: 10px;
+position: absolute;
+z-index: 1;
+width: calc(100% - 20px);
+height: calc(100% - 20px);
+filter: grayscale(1);
+
+}
+
+.card .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.card .content .detail{
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(145px);
+    margin: bottom 10px;
+    color: #45f3ff;
+    font-style: italic;
+} 
+
+.card .content .data{
+    margin-bottom: -170px;
+    margin-left: 40px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 120px;
+    color: #ff3c7b;
+    border-radius: 50%;
+
+}
+
+
+.card .content .data .btn{
+  margin-top: 80px;
+  gap: 0px;
+
+}
+.card .content .btn{
+    margin-bottom: -110px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    display: flex;
+    outline: none;
+    
+
+
+}
+
+
+
+.card .content .detail span{
+    font-size: 0.75em;
+    color: #ff3c7b;
+
+}
+.card .content .data span{
+    color:#3cd8ff;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+.card .content .btn button{
+    color:#000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    background-color: #3cf2ff;
+    font-style: italic;
+    outline: none;
+    border-radius: 200px;
+    font-weight: bold;
+    padding: 5px;
+}
+.card .content .btn button:hover{
+    color: white;
+    background-color: #ff3c7b;
+    text-decoration: none;
+}
+
+i {
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
